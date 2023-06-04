@@ -1,0 +1,64 @@
+{% extends "gallery_app/base.html" %}
+
+{% block header %}
+    <div class='jumbotron'>
+        <h1>The ImSegram</h1>
+    </div>
+{% endblock header %}
+
+{% block content %} 
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Stanley's ImSegram</title>
+    <h2>A gallery of image segmented photos.</h2>
+    <br>
+    <h3>About:</h3>
+      <p>
+        The story behind this project starts in 2019, when I was a student in the data science program at Northeastern University. We were in the midst of a section on K Means clustering, 
+        which I was already familiar with, but what stuck out to me this time was the application to images.  By applying K Means clustering to a flattened image array, I 
+        learned you could essentially render an images' pixels down into groupings that corresponded to objects in the original photo.  But nevermind the obvious 
+        utility this has to the field of computer vision, I just thought it was really cool.  In a way, I found it was sort of like looking at an Andy Warhol painting.
+      </p> 
+      
+      <p>After graduating in 2020 amidst the pandemic, I found myself facing a problem: as newly minted data scientist with little actual work experience, I was finding it 
+        very difficult to actually convince people I had experience working with machine learning algorithms, which as one can imagine, isn't great when trying to find employment. 
+        I was eventually able to find work as a business analyst, which occupied my time for about two years before I was laid off in 2023 when funding ran out.    
+      </p> 
+
+      <p>
+        That massively sucked, but there was a silver-lining: with all the freetime I now had, I decided it was good time to build this website and kill two birds 
+        with one stone: show the world I can work with machine learning algorithms; demonstrate my ability as a programmer to build and deploy a functioning website; 
+        and most importantly, just do something fun and educational. 
+      </p>
+
+      <p>
+        This image gallery website is the result of these efforts.  It's a space devoted to showing some of the more interesting results of the images from 
+        my life, post-image segmentation.  I intend this to be a living project that will continue to expand and thrive overtime, and I hope you find the result of my work 
+        to be as interesting as I do.
+      </p>
+  </head>
+  <body class="container " style="padding-top: 5%;">
+    <div class="row">
+        {% for x in data %}
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="{{ x.photo.url }}">
+              <img src="{{ x.photo.url }}" alt="Lights" style="width:100%">
+              <div class="caption">
+                <p>{{ x.title }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </body>
+</html>
+{% endblock content %}
