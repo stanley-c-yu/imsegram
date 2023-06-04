@@ -1,5 +1,32 @@
-imsegram_env/
-__pycache__/
-*.sqlite3
-project_spec.txt
+# Python 
+*.pyc
+*~
+__pycache__
+
+# Env
 .env
+imsegram_env/
+venv/
+
+# Database
+*.sqlite3
+
+# Other
+project_spec.txt
+
+# macOS
+._*
+.DS_Store
+.fseventsd
+.Spotlight-V100
+
+# Windows
+Thumbs.db*
+ehthumbs*.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio
+.vscode/
+.history/
+*.code-workspace
